@@ -159,6 +159,11 @@ void closeapplication() // BIBIN LUKOSE
 int main() // BIBIN LUKOSE
 {
     int loop=1, option;
+    string BookDetails[100][8];
+    string BookIssueReturn[100][6];
+
+
+
     while(loop==1)
     {
         system("CLS");
