@@ -1,4 +1,4 @@
-#include <iostream> // OUT LINE DONE BY - BIBIN LUKOSE
+#include <iostream> // OUT LINE PROGRAMME DONE BY - BIBIN LUKOSE
 #include <string>
 
 using namespace std;
@@ -6,8 +6,6 @@ using namespace std;
 string BookDetails[100][8];
 string BookIssueReturn[100][6];
 int BookCount=0;
-
-
 
 /*
 
@@ -45,11 +43,6 @@ struct IssueReturnDetails
 
 */
 
-
-
-
-
-
 void AddBooks() // BIBIN LUKOSE
 {
     while (1 == 1)
@@ -61,44 +54,82 @@ void AddBooks() // BIBIN LUKOSE
         if(BookCount>=0 && BookCount<100)
         {
             system("cls");
-            cout << "Enter book category :\n";
-            cout << "   1.  Computer \n";
-            cout << "   2.  Electronics \n";
-            cout << "   3.  Electricals \n";
-            cout << "   4.  Civil \n";
-            cout << "   5.  Mechanical \n";
-            cout << "Enter the option number : ";
+            cout << "\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||              ADDING NEW BOOK RECORD             |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n";
+
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||               SELECT BOOK CATEGORY              |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||         1.  COMPUTER                            |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||         2.  ELECTRONICS                         |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||         3.  ELECTRICAL                          |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||         4.  CIVIL                               |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||         5.  MECHANICAL                          |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+            cout << "                  ENTER THE CATEGORY NUMBER  : \a";
             cin >> CatOption;
+            cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
 
             switch (CatOption)
             {
-                case 1  :   AddNewBook.BookCategory="Computer";
+                case 1  :   AddNewBook.BookCategory="COMPUTER";
                             AddNewBook.BookRackNo="1";
                             break;
-                case 2  :   AddNewBook.BookCategory="Electronics";
+                case 2  :   AddNewBook.BookCategory="ELECTRONICS";
                             AddNewBook.BookRackNo="2";
                             break;
-                case 3  :   AddNewBook.BookCategory="Electricals";
+                case 3  :   AddNewBook.BookCategory="ELECTRICAL";
                             AddNewBook.BookRackNo="3";
                             break;
-                case 4  :   AddNewBook.BookCategory="Civil";
+                case 4  :   AddNewBook.BookCategory="CIVIL";
                             AddNewBook.BookRackNo="4";
                             break;
-                case 5  :   AddNewBook.BookCategory="Mechanical";
+                case 5  :   AddNewBook.BookCategory="MECHANICAL";
                             AddNewBook.BookRackNo="5";
                             break;
-                default :   cout << "You entered wrong input....\n";
+                default :   cout << "\n\n\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                            cout << "   |||||||||||                                                 |||||||||||\n";
+                            cout << "   |||||||||||         YOU ENTERED WRONG INPUT ! . . .         |||||||||||\n";
+                            cout << "   |||||||||||                                                 |||||||||||\n";
+                            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
+                            system("pause");
                             continue;
             }
 
-            cout << "Enter book ID : ";
+            cout << "                         ENTER BOOK ID       : \a";
             cin >> AddNewBook.BookId;
+            cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
 
             for(int i=0; i<BookCount;i++)
             {
                 if(AddNewBook.BookId==BookDetails[i][0])
                 {
-                    cout << "\n\nThe Book ID is already exist! \n\nYou can update the book details from the main menu ! \n\n";
+                    cout << "\n\n\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                    cout << "   |||||||||||                                                 |||||||||||\n";
+                    cout << "   |||||||||||         THE BOOK ID IS ALREADY EXIST !          |||||||||||\n";
+                    cout << "   |||||||||||    UPDATE BOOK DETAILS FROM THE MAIN MENU !     |||||||||||\n";
+                    cout << "   |||||||||||                                                 |||||||||||\n";
+                    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n \a";
+                    
                     Flag=1;
                     break;
                 }
@@ -106,20 +137,25 @@ void AddBooks() // BIBIN LUKOSE
                 
             if(Flag==0)
             {
-                cout << "Enter book name : ";
+                cout << "                       ENTER BOOK NAME       : \a";
                 cin >> AddNewBook.BookName;
+                cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
                     
-                cout << "Enter book author : ";
+                cout << "                       ENTER BOOK AUTHOR     : \a";
                 cin >> AddNewBook.BookAuthor;
+                cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
                     
-                cout << "Enter book ISBN : ";
+                cout << "                       ENTER BOOK ISBN       : \a";
                 cin >> AddNewBook.BookISBN;
+                cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
 
-                cout << "Enter book Quantity : ";
+                cout << "                       ENTER BOOK QUANTITY   : \a";
                 cin >> AddNewBook.BookQuantity;
+                cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
 
-                cout << "Enter book Price : ";
+                cout << "                       ENTER BOOK PRICE      : \a";
                 cin >> AddNewBook.BookPrice;
+                cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
 
 
                 BookDetails[BookCount][0]=AddNewBook.BookId;
@@ -133,34 +169,76 @@ void AddBooks() // BIBIN LUKOSE
 
                 BookCount++;
 
-                }
-                
+                system("cls");
+                cout << "\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||      NEW BOOK RECORD ADDED SUCESSFULLY !        |||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||                 NEW BOOK DETAILS                |||||||||||\n";
+                cout << "   |||||||||||                 ================                |||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK ID             :   " << AddNewBook.BookId <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK NAME           :   " << AddNewBook.BookName <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK AUTHOR         :   " << AddNewBook.BookAuthor <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK CATEGORY       :   " << AddNewBook.BookCategory <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK ISBN           :   " << AddNewBook.BookISBN <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK QUANTITY       :   " << AddNewBook.BookQuantity <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK PRICE          :   " << AddNewBook.BookPrice <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK RACK NO        :   " << AddNewBook.BookRackNo <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
+            }
         }
         else
         {
-            cout<<"\n\nMemmory Full ! \n\n";
+            cout << "\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||                  MEMORY FULL !                  |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
         }
 
-
-        cout<<"\n\n Do you want to enter more book details ! (y/n)";
+        cout<<"\n\n    DO YOU WANT TO ENTER MORE BOOK DETAILS ! ( Y / N ) : \a";
         cin>>MoreData;
 
         if(MoreData=='Y' || MoreData=='y')
         {
             continue;
         }
-        else
+        else if(MoreData=='N' || MoreData=='n')
         {
             break;
         }
+        else
+        {
+            cout << "\n\n\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||         YOU ENTERED WRONG INPUT ! . . .         |||||||||||\n";
+            cout << "   |||||||||||                                                 |||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+            cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
+            system("pause");
+            break;
+        }
     }   
-    
-    system("pause");
 
 }
-
-
-
 
 
 void DeleteBooks() //Alma Pathrose
@@ -260,68 +338,42 @@ void DeleteBooks() //Alma Pathrose
 
 
 
-
 void SearchBooks() // ALMA PATHROSE
 {
     cout << "\n TEST DATA : SEARCH BOOKS\n";
-
-    
     system("pause");
 }
-
-
 
 
 
 void ViewBooks() // JAY SURYAKANTH
 {
     cout << "\n TEST DATA : VIEW BOOKS\n";
-
-    
     system("pause");
 }
-
-
 
 
 
 void EditBooks() // JAY SURYAKANTH
 {
     cout << "\n TEST DATA : EDIT BOOKS\n";
-
-    
     system("pause");
 }
-
-
-
 
 
 
 void IssueBooks()  // NILAY
 {
     cout << "\n TEST DATA : ISSUE BOOKS\n";
-
-    
     system("pause");
 }
-
-
-
-
-
 
 
 void ReturnBooks()  // NILAY
 {
     cout << "\n TEST DATA : RETURN BOOKS\n";
-
-    
     system("pause");
 }
-
-
-
 
 
 void closeapplication() // BIBIN LUKOSE
@@ -331,10 +383,12 @@ void closeapplication() // BIBIN LUKOSE
     cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
     cout << "   |||||||||||                                                 |||||||||||\n";
     cout << "   |||||||||||                THANKS AND REGARDS               |||||||||||\n";
-    cout << "   |||||||||||                                                 |||||||||||";
-    cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+    cout << "   |||||||||||                                                 |||||||||||\n";
+    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
     cout << "   |||||||||||                                                 |||||||||||\n";
     cout << "   |||||||||||               GROUP NO : 10                     |||||||||||\n";
+    cout << "   |||||||||||               =============                     |||||||||||\n";
     cout << "   |||||||||||                                                 |||||||||||\n";
     cout << "   |||||||||||     BIBIN LUKOSE                                |||||||||||\n";
     cout << "   |||||||||||                                                 |||||||||||\n";              
@@ -345,13 +399,10 @@ void closeapplication() // BIBIN LUKOSE
     cout << "   |||||||||||     JAY SURYAKANT PATEL                         |||||||||||\n";
     cout << "   |||||||||||                                                 |||||||||||\n";
     cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
-    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+    cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n\n";
 
     system("pause");
 }
-
-
-
 
 
 int main() // BIBIN LUKOSE
@@ -360,18 +411,15 @@ int main() // BIBIN LUKOSE
     string BookDetails[100][8];
     string BookIssueReturn[100][6];
 
-
-
     while(1 == 1)
     {
         system("CLS");
-
         cout << "\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
         cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
         cout << "   |||||||||||                                                 |||||||||||\n";
         cout << "   |||||||||||             LIBRARY MANAGEMENT SYSTEM           |||||||||||\n";
-        cout << "   |||||||||||                                                 |||||||||||";
-        cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+        cout << "   |||||||||||                                                 |||||||||||\n";
+        cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
         cout << "   |||||||||||                                                 |||||||||||\n";
         cout << "   |||||||||||     1  :   ADD BOOKS                            |||||||||||\n";
         cout << "   |||||||||||                                                 |||||||||||\n";              
@@ -417,7 +465,13 @@ int main() // BIBIN LUKOSE
             case 8 : closeapplication();
                      return 0;
                     
-            default : cout << "You Entered Wrong Input.... \n"; 
+            default : cout << "\n\n\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                      cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                      cout << "   |||||||||||                                                 |||||||||||\n";
+                      cout << "   |||||||||||         YOU ENTERED WRONG INPUT ! . . .         |||||||||||\n";
+                      cout << "   |||||||||||                                                 |||||||||||\n";
+                      cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                      cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n";
                       system("pause");    
                       continue;       
         }
