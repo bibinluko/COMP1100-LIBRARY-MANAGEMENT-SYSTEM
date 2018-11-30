@@ -8,14 +8,12 @@ string BookIssueReturn[100][6];
 int BookCount=0;
 
 /*
-
 struct Date
 {
     int day;
     int month;
     int year;
 };
-
 */
 
 struct Book
@@ -40,7 +38,6 @@ struct IssueReturnDetails
     date BookReturnDate;
     bool BookStatus;
 };
-
 */
 
 void AddBooks() // BIBIN LUKOSE
@@ -249,6 +246,7 @@ void DeleteBooks() //Alma Pathrose
     int DeleteFlag=0;
     while(1==1)
     {
+        system("cls");
         cout << "\nEnter Book ID for Delete: ";
         cin>>DelBId;
         if(BookCount>0)
@@ -259,17 +257,17 @@ void DeleteBooks() //Alma Pathrose
                 {
                     cout<<"\n\n********************************************"<<endl;
                     cout<<"               BOOK DETAILS"<<endl;
-                    cout<<"********************************************"<<endl;
-                    cout<<"      BOOK ID         :"<<BookDetails[i][0]<<endl;
-                    cout<<"      BOOK NAME       :"<<BookDetails[i][1]<<endl;
-                    cout<<"      BOOK AUTHOR NAME:"<<BookDetails[i][2]<<endl;
-                    cout<<"      BOOK CATEGORY   :"<<BookDetails[i][3]<<endl;
-                    cout<<"      BOOK ISBN       :"<<BookDetails[i][4]<<endl;
-                    cout<<"      BOOK QUANTITY   :"<<BookDetails[i][5]<<endl;
-                    cout<<"      BOOK PRICE      :"<<BookDetails[i][6]<<endl;
-                    cout<<"      BOOK RACK NUMBER:"<<BookDetails[i][7]<<endl;
-                    cout<<"********************************************\n"<<endl;
-                    cout<<"\n ARE YOU SURE TO DELETE THIS BOOK RECORD(Y/N)? \n";
+                    cout<<"********************************************"<<endl<<endl;
+                    cout<<"      BOOK ID         :"<<BookDetails[i][0]<<endl<<endl;
+                    cout<<"      BOOK NAME       :"<<BookDetails[i][1]<<endl<<endl;
+                    cout<<"      BOOK AUTHOR NAME:"<<BookDetails[i][2]<<endl<<endl;
+                    cout<<"      BOOK CATEGORY   :"<<BookDetails[i][3]<<endl<<endl;
+                    cout<<"      BOOK ISBN       :"<<BookDetails[i][4]<<endl<<endl;
+                    cout<<"      BOOK QUANTITY   :"<<BookDetails[i][5]<<endl<<endl;
+                    cout<<"      BOOK PRICE      :"<<BookDetails[i][6]<<endl<<endl;
+                    cout<<"      BOOK RACK NUMBER:"<<BookDetails[i][7]<<endl<<endl;
+                    cout<<"********************************************\n"<<endl<<endl;
+                    cout<<"\n ARE YOU SURE TO DELETE THIS BOOK RECORD(Y/N)? : ";
                    
                     cin>>a;
                     if(a=='y'||a=='Y')
@@ -283,7 +281,10 @@ void DeleteBooks() //Alma Pathrose
                         }     
                                       
                         BookCount--;
-                        cout<<"\n\nDELETED SUCESSFULLY"<<endl;
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***          DELETED  SUCESSFULLY        ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                    
                         DeleteFlag=0;
                         break;
                     }
@@ -295,7 +296,9 @@ void DeleteBooks() //Alma Pathrose
                     else
                     {
                         DeleteFlag=0;
-                        cout<<"INVALID ENTRY!"<<endl;
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***              INVALID ENTRY           ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
                         break;
                     }   
                             
@@ -307,16 +310,20 @@ void DeleteBooks() //Alma Pathrose
             }
             if(DeleteFlag==1)
             {
-                cout<<"\n\nTHERE IS NO BOOK UNDER THIS BOOK ID!\n\n";
+                cout<<"\n********************************************"<<endl;
+                cout<<"***             BOOK NOT FOUND           ***"<<endl;
+                cout<<"********************************************"<<endl<<endl;
                 DeleteFlag=0;
             }    
         }
         else
         {
-            cout<<"\n\nEMPTY!\n\n";
+            cout<<"\n********************************************"<<endl;
+            cout<<"***              RECORD EMPTY            ***"<<endl;
+            cout<<"********************************************"<<endl<<endl;
         }
 
-        cout<<"DO YOU WANT DELETE MORE BOOKS(Y/N)?"<<endl;
+        cout<<"\n\nDO YOU WANT DELETE MORE BOOKS(Y/N)?"<<endl;
         char replay;
         cin>>replay;
         if(replay=='n'||replay=='N')
@@ -329,7 +336,9 @@ void DeleteBooks() //Alma Pathrose
         }
         else
         {
-            cout<<"\nINVALID ENTRY!"<<endl;  
+            cout<<"\n********************************************"<<endl;
+            cout<<"***              INVALID ENTRY           ***"<<endl;
+            cout<<"********************************************"<<endl<<endl;
             break;
         }    
     }
@@ -340,9 +349,163 @@ void DeleteBooks() //Alma Pathrose
 
 void SearchBooks() // ALMA PATHROSE
 {
-    cout << "\n TEST DATA : SEARCH BOOKS\n";
-    system("pause");
+    int op,SFlag=0;
+    char cs;
+    string SBookID,SBookName;
+    while(1==1)
+    {
+        system("cls");
+        cout << "   ***********************************************************************\n";
+        cout << "   ***********************************************************************\n";
+        cout << "   ***********                                                 ***********\n";
+        cout << "   |||||||||||           SELECT AN OPTION FOR SEARCH           |||||||||||\n";
+        cout << "   ***********                                                 ***********\n";
+        cout << "   ***********************************************************************\n";
+        cout << "   ***********************************************************************\n";
+        cout << "   ***********                                                 ***********\n";
+        cout << "   |||||||||||         1.  BY BOOK ID                          |||||||||||\n";
+        cout << "   ***********                                                 ***********\n";
+        cout << "   |||||||||||         2.  BY BOOK NAME                        |||||||||||\n";
+        cout << "   ***********                                                 ***********\n";
+        cout << "   ***********************************************************************\n";
+        cout << "                  ENTER AN OPTION NUMBER  : ";
+        cin >> op;
+        cout << "   ***********************************************************************\n";
+        cout << "   ***********************************************************************\n\n";
+        
+        switch (op)
+        {
+            case 1: cout<<"Enter a Book ID :";
+                    cin>>SBookID;
+                    if(BookCount>0)
+                    {
+                        for (int i=0;i<BookCount;i++)
+                        {
+                            if(SBookID==BookDetails[i][0])
+                            {
+                                cout<<"\n\n********************************************"<<endl;
+                                cout<<"               BOOK DETAILS"<<endl;
+                                cout<<"********************************************"<<endl<<endl;
+                                cout<<"      BOOK ID         :"<<BookDetails[i][0]<<endl<<endl;
+                                cout<<"      BOOK NAME       :"<<BookDetails[i][1]<<endl<<endl;
+                                cout<<"      BOOK AUTHOR NAME:"<<BookDetails[i][2]<<endl<<endl;
+                                cout<<"      BOOK CATEGORY   :"<<BookDetails[i][3]<<endl<<endl;
+                                cout<<"      BOOK ISBN       :"<<BookDetails[i][4]<<endl<<endl;
+                                cout<<"      BOOK QUANTITY   :"<<BookDetails[i][5]<<endl<<endl;
+                                cout<<"      BOOK PRICE      :"<<BookDetails[i][6]<<endl<<endl;
+                                cout<<"      BOOK RACK NUMBER:"<<BookDetails[i][7]<<endl<<endl;
+                                cout<<"********************************************\n"<<endl<<endl;
+                                SFlag=1;
+                                break;
+                            }
+                            else
+                            {
+                                SFlag=0;
+                            }
+                        }
+                        if(SFlag==0)
+                        {
+                            cout<<"\n********************************************"<<endl;
+                            cout<<"***            RECORD NOT FOUND          ***"<<endl;
+                            cout<<"********************************************"<<endl<<endl;
+                        }
+                    }
+                    else
+                    {
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***              RECORD EMPTY            ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                    }
+
+                    cout << "Do you want to go for another search (Y / N) ? :";
+                    cin>>cs;
+                    if(cs=='y' || cs=='Y')
+                    {
+                        continue;
+                    }
+                    else if(cs=='n' || cs=='N')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***              INVALID ENTRY           ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                        system("pause");
+                        break;
+                    }
+            case 2: cout<<"Enter a Book Name :";
+                    cin>>SBookName;
+                    if(BookCount>0)
+                    {
+                        for (int i=0;i<BookCount;i++)
+                        {
+                            if(SBookName==BookDetails[i][1])
+                            {
+                                system("cls");
+                                cout<<"\n\n********************************************"<<endl;
+                                cout<<"               BOOK DETAILS"<<endl;
+                                cout<<"********************************************"<<endl<<endl;
+                                cout<<"      BOOK ID         :"<<BookDetails[i][0]<<endl<<endl;
+                                cout<<"      BOOK NAME       :"<<BookDetails[i][1]<<endl<<endl;
+                                cout<<"      BOOK AUTHOR NAME:"<<BookDetails[i][2]<<endl<<endl;
+                                cout<<"      BOOK CATEGORY   :"<<BookDetails[i][3]<<endl<<endl;
+                                cout<<"      BOOK ISBN       :"<<BookDetails[i][4]<<endl<<endl;
+                                cout<<"      BOOK QUANTITY   :"<<BookDetails[i][5]<<endl<<endl;
+                                cout<<"      BOOK PRICE      :"<<BookDetails[i][6]<<endl<<endl;
+                                cout<<"      BOOK RACK NUMBER:"<<BookDetails[i][7]<<endl<<endl;
+                                cout<<"********************************************\n"<<endl<<endl;
+                                 SFlag=1;
+                                break;
+                            }
+                            else
+                            {
+                                SFlag=0;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***              RECORD EMPTY            ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                    }
+
+                    cout << "Do you want to go for another search (Y / N) ? :";
+                    cin>>cs;
+                    if(cs=='y' || cs=='Y')
+                    {
+                        continue;
+                    }
+                    else if(cs=='n' || cs=='N')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***              INVALID ENTRY           ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                        system("pause");
+                        break;
+                    }
+            default: cout<<"\n********************************************"<<endl;
+                     cout<<"***              INVALID ENTRY           ***"<<endl;
+                     cout<<"********************************************"<<endl<<endl;
+                     system("pause");
+                     break;
+        }
+
+        if(cs=='n'||cs=='N')
+        {
+            break;
+        }
+    }
 }
+
+                
+                    
 
 
 
