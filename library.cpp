@@ -210,7 +210,7 @@ void AddBooks() // BIBIN LUKOSE
             cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
         }
 
-        cout<<"\n\n    DO YOU WANT TO ENTER MORE BOOK DETAILS ! ( Y / N ) : \a";
+        cout<<"\n\n    DO YOU WANT TO ENTER MORE BOOK DETAILS ! ( Y / N ) : ";
         cin>>MoreData;
 
         if(MoreData=='Y' || MoreData=='y')
@@ -247,7 +247,7 @@ void DeleteBooks() //Alma Pathrose
     while(1==1)
     {
         system("cls");
-        cout << "\nEnter Book ID for Delete: ";
+        cout << "\nEnter Book ID for Delete: \a ";
         cin>>DelBId;
         if(BookCount>0)
         {
@@ -267,13 +267,13 @@ void DeleteBooks() //Alma Pathrose
                     cout<<"      BOOK PRICE      :"<<BookDetails[i][6]<<endl<<endl;
                     cout<<"      BOOK RACK NUMBER:"<<BookDetails[i][7]<<endl<<endl;
                     cout<<"********************************************\n"<<endl<<endl;
-                    cout<<"\n ARE YOU SURE TO DELETE THIS BOOK RECORD(Y/N)? : ";
+                    cout<<"\n ARE YOU SURE TO DELETE THIS BOOK RECORD(Y/N)? :  \a";
                    
                     cin>>a;
                     if(a=='y'||a=='Y')
                     {
                         for(j=i;j<=BookCount;j++)
-                        {
+                        { 
                             for(k=0;k<8;k++)
                             { 
                                 BookDetails[j][k]=BookDetails[j+1][k];
@@ -323,7 +323,7 @@ void DeleteBooks() //Alma Pathrose
             cout<<"********************************************"<<endl<<endl;
         }
 
-        cout<<"\n\nDO YOU WANT DELETE MORE BOOKS(Y/N)?"<<endl;
+        cout<<"\n\nDO YOU WANT DELETE MORE BOOKS(Y/N)? \a"<<endl;
         char replay;
         cin>>replay;
         if(replay=='n'||replay=='N')
@@ -368,14 +368,14 @@ void SearchBooks() // ALMA PATHROSE
         cout << "   |||||||||||         2.  BY BOOK NAME                        |||||||||||\n";
         cout << "   ***********                                                 ***********\n";
         cout << "   ***********************************************************************\n";
-        cout << "                  ENTER AN OPTION NUMBER  : ";
+        cout << "                  ENTER AN OPTION NUMBER  : \a ";
         cin >> op;
         cout << "   ***********************************************************************\n";
         cout << "   ***********************************************************************\n\n";
         
         switch (op)
         {
-            case 1: cout<<"Enter a Book ID :";
+            case 1: cout<<"Enter a Book ID : \a";
                     cin>>SBookID;
                     if(BookCount>0)
                     {
@@ -417,7 +417,7 @@ void SearchBooks() // ALMA PATHROSE
                         cout<<"********************************************"<<endl<<endl;
                     }
 
-                    cout << "Do you want to go for another search (Y / N) ? :";
+                    cout << "Do you want to go for another search (Y / N) ? : \a ";
                     cin>>cs;
                     if(cs=='y' || cs=='Y')
                     {
@@ -435,7 +435,7 @@ void SearchBooks() // ALMA PATHROSE
                         system("pause");
                         break;
                     }
-            case 2: cout<<"Enter a Book Name :";
+            case 2: cout<<"Enter a Book Name : \a";
                     cin>>SBookName;
                     if(BookCount>0)
                     {
@@ -472,7 +472,7 @@ void SearchBooks() // ALMA PATHROSE
                         cout<<"********************************************"<<endl<<endl;
                     }
 
-                    cout << "Do you want to go for another search (Y / N) ? :";
+                    cout << "Do you want to go for another search (Y / N) ? : \a";
                     cin>>cs;
                     if(cs=='y' || cs=='Y')
                     {
@@ -603,7 +603,7 @@ int main() // BIBIN LUKOSE
         cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
         cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
 
-        cout << "\n                           ENTER THE OPTION : ";
+        cout << "\n                           ENTER THE OPTION : \a ";
         cin >> option;
         cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||";
         cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
