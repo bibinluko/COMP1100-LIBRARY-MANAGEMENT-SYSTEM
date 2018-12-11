@@ -564,7 +564,7 @@ void IssueBooks()  // NILAY
                      cin >> issueNewBook.StudentName;
                      cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
                     
-                  cout << "                       Enter Number of Days to issue book    : \a";
+                  cout << "                       Enter Number of Days to issue this book    : \a";
                  cin >> issueNewBook.BookTime;
                 cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
 
