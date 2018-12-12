@@ -545,17 +545,120 @@ void SearchBooks() // ALMA PATHROSE
 
 
 
-void ViewBooks() // JAY SURYAKANTH
+void ViewBooks() // JAY SURYAKANT 
 {
-    cout << "\n TEST DATA : VIEW BOOKS\n";
-    system("pause");
+     int i;
+            for(int i = 0; i < BookCount; ++i)
+                  {
+                    cout<<"      BOOK ID         :"<<BookDetails[i][0]<<endl<<endl;
+                    cout<<"      BOOK NAME       :"<<BookDetails[i][1]<<endl<<endl;
+                    cout<<"      BOOK AUTHOR NAME:"<<BookDetails[i][2]<<endl<<endl;
+                    cout<<"      BOOK CATEGORY   :"<<BookDetails[i][3]<<endl<<endl;
+                    cout<<"      BOOK ISBN       :"<<BookDetails[i][4]<<endl<<endl;
+                    cout<<"      BOOK QUANTITY   :"<<BookDetails[i][5]<<endl<<endl;
+                    cout<<"      BOOK PRICE      :"<<BookDetails[i][6]<<endl<<endl;
+                    cout<<"      BOOK RACK NUMBER:"<<BookDetails[i][7]<<endl<<endl;  
+                    cout<<"|||||||||||||||||||||||||||||||||||||||||||"<<endl<<endl;                    
+                  } 
+        system("pause");
 }
 
 
 
-void EditBooks() // JAY SURYAKANTH
+void EditBooks() // JAY SURYAKANT
 {
-    cout << "\n TEST DATA : EDIT BOOKS\n";
+    string EBId;
+    char a;
+    int i;
+    int EDITFlag=0;
+    while(1==1)
+    { 
+        system("cls");
+        cout << "\nENTER BOOK ID TO UPDATE: \a ";
+        cin>>EBId;
+        if(BookCount>0)
+        {
+            for (i=0;i<BookCount;i++)
+            {
+                if(EBId==BookDetails[i][0])
+                {
+                    
+                    cout<<"\n ARE YOU SURE TO UPDATE THIS BOOK (Y/N)? :  \a";
+                   
+                    cin>>a;
+                    if(a=='y'||a=='Y')
+                    {
+                    cout<<"\n ||||||||||||||||||||||||||||||||||||||||||||||||||"<<endl<<endl;
+                        cout<<"       ADD THE NEW PRICE             : ";
+                        cin>>BookDetails[i][6];
+                        
+                        cout<<"\n       THE NEW STOCK OF THIS BOOK IS : ";
+                        cin>>BookDetails[i][5];
+                        
+                    cout<<"\n ||||||||||||||||||||||||||||||||||||||||||||||||||"<<endl;                        
+                        
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***          UPDATED SUCESSFULLY        ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                    
+                        EDITFlag=0;
+                        break;
+                    }
+                    else if(a=='n'||a=='N')
+                    {
+                        EDITFlag=0;
+                        break; 
+                    }
+                    else
+                    {
+                        EDITFlag=0;
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***              INVALID ENTRY           ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                        break;
+                    }   
+                            
+                }
+                else
+                {
+                    EDITFlag=1;  
+                }
+            }
+            if(EDITFlag==1)
+            {
+                cout<<"\n********************************************"<<endl;
+                cout<<"***             BOOK NOT FOUND           ***"<<endl;
+                cout<<"********************************************"<<endl<<endl;
+                EDITFlag=0;
+            }    
+        }
+        else
+        {
+            cout<<"\n********************************************"<<endl;
+            cout<<"***              BOOK NOT FOUND           ***"<<endl;
+            cout<<"********************************************"<<endl<<endl;
+        }
+
+        cout<<"\n\nDO YOU WANT UPDATE MORE BOOKS(Y/N)? \a"<<endl;
+        char replay;
+        cin>>replay;
+        if(replay=='n'||replay=='N')
+        {
+            break;
+        }
+        else if(replay=='y'||replay=='Y')
+        {
+            continue;
+        }
+        else
+        {
+            cout<<"\n********************************************"<<endl;
+            cout<<"***              INVALID ENTRY           ***"<<endl;
+            cout<<"********************************************"<<endl<<endl;
+            break;
+        }    
+    }
+      
     system("pause");
 }
 
