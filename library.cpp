@@ -30,17 +30,19 @@ struct Book                             //  BIBIN : Structure for book details.
     string BookRackNo;
 };
 
-/*
+
 struct IssueReturnDetails               //  BIBIN : Structure for Book Issue and return.
 {
     int StudentID;
     string StudentName;
-    int BookId;
-    date BookIssueDate;
-    date BookReturnDate;
-    bool BookStatus;
+    string BookId;
+    int BookTime;
+   
+    
+   
+  
 };
-*/
+
 
 void AddBooks()                         //   BIBIN : Function for Adding books.              
 {
@@ -666,15 +668,211 @@ void EditBooks() // JAY SURYAKANT
 
 void IssueBooks()  // NILAY
 {
-    cout << "\n TEST DATA : ISSUE BOOKS\n";
-    system("pause");
+
+  while(0==0)
+    {
+      int issueOption, num;
+        char q;
+         IssueReturnDetails issueNewBook;
+         Book Addnewbook;
+         
+        
+        
+
+         cout << "                         ENTER BOOK ID  TO ISSUE BOOK     : \a";
+            cin >> Addnewbook.BookId;
+            cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+             if (BookCount>0)
+             {
+                  for ( int i=0;i<BookCount;i++)
+                  {
+
+             
+                 if(Addnewbook.BookId==BookDetails[i][0])
+                 {
+
+            
+            
+                      cout << "                       Enter Student ID      : \a";
+                      cin >> issueNewBook.StudentID;
+                      cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+                    
+                     cout << "                       Enter Student Name    : \a";
+                     cin >> issueNewBook.StudentName;
+                     cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+                    
+                  cout << "                       Enter Number of Days to issue book    : \a";
+                 cin >> issueNewBook.BookTime;
+                cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+
+               // cout << "                       Enter Return Date : \a";
+              /////  cin >> issueNewBook.BookReturnDate;
+              //  cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+
+              //  cout << "                       Enter Book Status     : \a";
+              //  cin >> issueNewBook.BookStatus;
+               // cout << "\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n";
+
+
+                BookIssueReturn[BookCount][0]=issueNewBook.BookId;
+                BookIssueReturn[BookCount][1]=issueNewBook.StudentID;
+                BookIssueReturn[BookCount][2]=issueNewBook.StudentName;
+                BookIssueReturn[BookCount][3]=issueNewBook.BookTime;
+               // BookIssueReturn[BookCount][4]=issueNewBook.BookReturnDate;
+               // BookIssueReturn[BookCount][5]=issueNewBook.BookStatus;
+            
+
+                BookCount--;
+
+                system("cls");
+                cout << "\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||                Book Issued SUCESSFULLY !        |||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||              Issued BOOK DETAILS                |||||||||||\n";
+                cout << "   |||||||||||              ===================                |||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   BOOK ID           :   " <<  Addnewbook.BookId << "\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   Student Name      :   " << issueNewBook.StudentName <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   Student Id        :   " << issueNewBook.StudentID <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "                   Enter NUMBER OF DAYS TO ISSUE THIS BOOK  :    " << issueNewBook.BookTime <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+              ///  cout << "                   Enter Return Date :     " << issueNewBook.BookReturnDate <<"\n";
+               // cout << "   |||||||||||                                                 |||||||||||\n";
+               // cout << "                   Enter Book Status :   " << issueNewBook.BookStatus <<"\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||                                                 |||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
+
+             }else{
+                     cout << "\n\n   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                     cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                     cout << "   |||||||||||                                                 |||||||||||\n";
+                     cout << "   |||||||||||                  Enter Valid Book ID            |||||||||||\n";
+                     cout << "   |||||||||||                                                 |||||||||||\n";
+                     cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+                     cout << "   |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n\n\n\n \a";
+             
+                  }
+                           
+                            
+               }   
+               
+            }else{
+                    cout<<"\n********************************************"<<endl;
+                       cout<<"***              RECORD EMPTY            ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                        
+                 } 
+                  cout<<"\n\n    Do you to issue more Books? ( Y / N ) : ";
+                   cin>>q;
+
+                  if(q=='Y' || q=='y')
+                    {
+                  continue;
+                   }
+                  else if(q=='N' || q=='n')
+                   {
+                  break;
+                    }
+                  
+            
+           
+                
+
+
+
+
+
+    }
+
+
 }
+
+   
+
 
 
 void ReturnBooks()  // NILAY
 {
-    cout << "\n TEST DATA : RETURN BOOKS\n";
-    system("pause");
+    {
+    string issueBId;
+    int x,y,z,issueflag;
+    char n;
+    
+     while(1==1)
+    {
+        system("cls");
+        cout << "\nEnter Book ID To Return Book: \a ";
+        cin>>issueBId;
+
+        if(BookCount>0)
+        {
+            for (x=0;x<BookCount;x++)
+            {
+                if(issueBId==BookDetails[x][0])
+                {
+                
+                                      
+                        BookCount++;
+                        cout<<"\n********************************************"<<endl;
+                        cout<<"***          Returned  SUCESSFULLY        ***"<<endl;
+                        cout<<"********************************************"<<endl<<endl;
+                    
+                        issueflag=0;
+                        break;
+                   
+                            
+                }
+                else
+                {
+                    issueflag=1;  
+                }
+            }
+            if(issueflag==1)
+            {
+                cout<<"\n********************************************"<<endl;
+                cout<<"***             BOOK NOT FOUND           ***"<<endl;
+                cout<<"********************************************"<<endl<<endl;
+                issueflag=0;
+            }    
+        }
+        else
+        {
+            cout<<"\n********************************************"<<endl;
+            cout<<"***              RECORD EMPTY            ***"<<endl;
+            cout<<"********************************************"<<endl<<endl;
+        }
+
+        cout<<"\n\nDo you want Return More Book(Y/N)? \a"<<endl;
+        char replay;
+        cin>>replay;
+        if(replay=='n'||replay=='N')
+        {
+            break;
+        }
+        else if(replay=='y'||replay=='Y')
+        {
+            continue;
+        }
+        else
+        {
+            cout<<"\n********************************************"<<endl;
+            cout<<"***              INVALID ENTRY           ***"<<endl;
+            cout<<"********************************************"<<endl<<endl;
+            break;
+        }    
+    }
+}
+    
 }
 
 
